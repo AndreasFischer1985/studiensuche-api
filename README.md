@@ -26,7 +26,7 @@ Der generierte Token muss bei folgenden GET-requests an https://rest.arbeitsagen
 
 ## Studiensuche
 
-**URL:** https://web.arbeitsagentur.de/studiensuche/suche
+**URL:** https://rest.arbeitsagentur.de/infosysbub/studisu/pc/v1/studienangebote
 
 
 Die Studiensuche ermöglicht, verfügbare Studienangebote mit verschiedenen GET-Parametern zu filtern. In der Regel ist dabei die Angabe mindestens eines Suchwortes (sw), Studienfeldes (sfe) oder eines Studienfachs (sfa) erforderlich. Eine Ausnahme von dieser Regel besteht beispielsweise darin, den Filter zum Studienmodell (smo) auf 5 (=Duales Studium) zu setzen.
