@@ -180,10 +180,7 @@ if(T){ #get page 0
     data=getData(
         url=paste0("https://rest.arbeitsagentur.de/infosysbub/studisu/pc/v1/studienangebote?sw=IT-Security-Manager"),        
         accessToken=token[[1]])
-    hexCodedData=httr::content(data)
-    decodedData=rawToChar(hexCodedData)
-    dataList[["page 0"]]=decodedData
-
+    dataList[["page 0"]]=data
     writeLines(decodedData,paste0(Sys.Date(),"_stData_",0,".txt"))
     save.image(paste0(Sys.Date(),"_st_successfulRequest.RData"))
 }

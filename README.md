@@ -21,7 +21,7 @@ curl \
 --compressed 'https://rest.arbeitsagentur.de/oauth/gettoken_cc'
 ```
 
-Der generierte Token muss bei folgenden GET-requests im header als 'OAuthAccessToken' inkludiert werden.
+Der generierte Token muss bei folgenden GET-requests an https://rest.arbeitsagentur.de/infosysbub/studisu/pc/v1/studienangebote im header als 'OAuthAccessToken' inkludiert werden.
 
 
 ## Studiensuche
@@ -29,7 +29,17 @@ Der generierte Token muss bei folgenden GET-requests im header als 'OAuthAccessT
 **URL:** https://web.arbeitsagentur.de/studiensuche/suche
 
 
-Die Studiensuche ermöglicht, verfügbare Studienangebote mit verschiedenen GET-Parametern zu filtern:
+Die Studiensuche ermöglicht, verfügbare Studienangebote mit verschiedenen GET-Parametern zu filtern. In der Regel ist dabei die Angabe mindestens eines Suchwortes (sw), Studienfeldes (sfe) oder eines Studienfachs (sfa) erforderlich. Eine Ausnahme von dieser Regel besteht beispielsweise darin, den Filter zum Studienmodell (smo) auf 5 (=Duales Studium) zu setzen.
+
+
+**Parameter:** *sw* (Optional)
+
+Suchwort, z.B. Informatikberufe
+
+
+**Parameter:** *sfa* (Optional)
+
+Studienfach-ID, z.B. 93683 für Bioinformatik
 
 
 **Parameter:** *sfe* (Optional)
@@ -215,9 +225,7 @@ Studiengangmodell: 1=ausbildungsintegrierend, 2=berufsintegrierend, 3=berufsbegl
 - 10
 - 12
 
-
 Studiengangsabschlussgrad: 0=ohne Angabe, 1=Abschlussprüfung, 2=Bachelor, 3=Diplom, 4=Diplom(FH), 10=Master, 12=Staatsexamen
-
 
 
 **Parameter:** *hsa* (Optional)

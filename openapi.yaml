@@ -1,0 +1,426 @@
+openapi: "3.0.0"
+info:
+  title: "Arbeitsagentur Studiensuche API"
+  description: |
+   Eine der größten Datenbanken für Studienangebote in Deutschland durchsuchen. 
+   
+   Die Authentifizierung funktioniert per OAuth 2 Client Credentials mit JWTs. Folgende Client-Credentials können dafür verwendet werden:
+   
+   **ClientID:** 5aee2cfe-1709-48a9-951d-eb48f8f73a74
+   
+   **ClientSecret:** 3309a57a-9214-40db-9abe-28b1bb30c08c
+   
+   **Achtung**: der generierte Token muss bei folgenden GET-requests an https://rest.arbeitsagentur.de/infosysbub/studisu/pc/v1/studienangebote im header als 'OAuthAccessToken' inkludiert werden.
+  version: "1.0.0"
+  contact:
+    name:  "AndreasFischer1985"
+    email: "andreasfischer1985@web.de"
+    url: "https://github.com/AndreasFischer1985/studiensuche-api"
+
+servers:
+  - url: "https://rest.arbeitsagentur.de/infosysbub/studisu"
+
+paths:
+  /pc/v1/studienangebote:
+    get:
+      summary: Studiensuche
+      description: "Die Studiensuche ermöglicht, verfügbare Studienangebote mit verschiedenen GET-Parametern zu filtern. In der Regel ist dabei die Angabe mindestens eines Suchwortes (sw), Studienfeldes (sfe) oder eines Studienfachs (sfa) erforderlich. Eine Ausnahme von dieser Regel besteht beispielsweise darin, den Filter zum Studienmodell (smo) auf 5 (für Duales Studium) zu setzen."
+      operationId: studiensuche
+      responses:
+        '200':
+            description: OK
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Response'
+      parameters:
+        - in: query
+          name: sw
+          schema:
+            type: string
+          description: Suchwort 
+          example: "Informatikberufe"
+          required: false
+
+        - in: query
+          name: sfa
+          schema:
+            type: integer
+          description: Studienfach-ID
+          example: "93683"
+          required: false
+
+        - in: query
+          name: sfe
+          schema:
+            type: string
+          description: dkzIds einer Studienfeld(gruppe), idR. zwei Semikolon-getrennte Werte je Studienfeld(gruppe)
+          example: "94175;94350"
+          required: false
+
+        - in: query
+          name: orte
+          schema:
+            type: string
+          description: Ortsangabe nebst Postleitzahl und Koordinaten
+          example: "Feucht_90537_11.224918_49.376701"
+          required: false
+
+        - in: query
+          name: page
+          schema:
+            type: integer
+          description: Ergebnissseite
+          example: 1
+          required: false
+      
+        - in: query
+          name: uk
+          schema:
+            type: string
+            enum:
+                - Bundesweit
+                - 25
+                - 50
+                - 100
+                - 150
+                - 200
+          description: Umkreis - Bundesweit=Bundesweit, 25=25 km, 50=50 km, 100=100 km, 150=150 km, 200=200 km.
+          example: "Bundesweit"
+          required: false
+
+        - in: query
+          name: re
+          schema:
+            type: string
+            enum:
+                - BW
+                - BY
+                - BE
+                - BB
+                - HB
+                - HH
+                - HE
+                - MV
+                - NI
+                - NW
+                - RP
+                - SL
+                - SN
+                - ST
+                - SH
+                - TH
+          description: Region/Bundesland - BW=Baden-Württemberg, BY=Bayern, BE=Berlin, BB=Brandenburg, HB=Bremen, HH=Hamburg, HE=Hessen, MV=Mecklenburg-Vorpommern, NI=Niedersachsen, NW=Nordrhei-Westfalen, RP=Rheinland-Pfalz, SL=Saarland, SN=Sachsen, ST=Sachsen-Anhalt, SH=Schleswig-Holstein, TH=Thüringen. Mehrere Komma-getrennte Angaben möglich.
+          example: "BW"
+          required: false
+
+        - in: query
+          name: sfo
+          schema:
+            type: integer
+            enum:
+                - 1
+                - 2
+                - 3
+                - 4
+                - 5
+          example: 1
+          description: Studienform - 1=Vollzeitstudium, 2=Teilzeitstudium, 3=Wochenendveranstaltung, 4=Fernstudium, 5=Selbststudium. Mehrere Semikolon-getrennte Angaben möglich.
+          required: false
+
+        - in: query
+          name: st
+          schema:
+            type: integer
+            enum:
+              - 0
+              - 1
+          example: 1
+          required: false
+          description: Studientyp - 0=Studiengang grundständig, 1=Studiengang weiterführend.
+
+        - in: query
+          name: smo
+          schema:
+            type: integer
+            enum:
+              - 1
+              - 2
+              - 3
+              - 4
+              - 5
+          description: Studiengangmodell - 1=ausbildungsintegrierend, 2=berufsintegrierend, 3=berufsbegleitend, 4=praxisintegrierend, 5=Duales Studium allgemein. Mehrere Semikolon-getrennte Angaben möglich.
+          example: 5
+          required: false
+
+        - in: query
+          name: abg
+          schema:
+            type: integer
+            enum:
+              - 0
+              - 1
+              - 2
+              - 3
+              - 4
+              - 10
+              - 12
+          description: Studiengangsabschlussgrad - 0=ohne Angabe, 1=Abschlussprüfung, 2=Bachelor, 3=Diplom, 4=Diplom(FH), 10=Master, 12=Staatsexamen
+          example: 0
+          required: false
+
+        - in: query
+          name: hsa
+          schema:
+            type: integer
+            enum:
+              - 101
+              - 106
+              - 107
+              - 108
+              - 113
+              - 114
+          description: Hochschulart - 101=Berufsakademie/Duale Hochschule, 106=FH/FAW, 107=Kunst- und Musikhochschule, 108=Universität, 111=Verwaltungshochschule, 113=Private Hochschule. 114=Hochschule eigenen Typs. Mehrere Semikolon-getrennte Angaben möglich.
+          example: 108
+          required: false
+
+        - in: query
+          name: san
+          schema:
+            type: integer
+          description: Studienanbieter-ID
+          example: 26218
+          required: false
+
+        - in: query
+          name: ffst
+          schema:
+            type: integer
+            enum:
+              - 1
+              - 2
+          description: Eignungstest - 1=Studiencheck, 2=OSA. Mehrere Semikolon-getrennte Angaben möglich.
+          example: "1"
+          required: false
+
+security: 
+  - clientCredAuth: 
+    - "read"
+
+components: 
+  securitySchemes:
+    clientCredAuth:    # <---- arbitrary name
+      type: oauth2
+      description: "Die Authentifizierung funktioniert per OAuth-2-Client Credentials mit JWTs. Client Credentials sind folgende:<br><br> **ClientID:**  5aee2cfe-1709-48a9-951d-eb48f8f73a74 <br> **ClientSecret:** 3309a57a-9214-40db-9abe-28b1bb30c08c<br><br>Der generierte Token muss bei folgenden GET-requests an https://rest.arbeitsagentur.de/infosysbub/studisu/pc/v1/studienangebote im header als 'OAuthAccessToken' inkludiert werden."
+      flows:
+        clientCredentials:  
+          tokenUrl: https://rest.arbeitsagentur.de/oauth/gettoken_cc
+          scopes: {}
+  schemas:    
+    Response:
+      type: object
+      properties:
+        items: 
+          type: array
+          items: 
+            type: object
+            properties: 
+              studienangebot:
+                type: object
+                properties: 
+                  studienanbieter:
+                    type: object
+                    properties:
+                      banId: 
+                        type: integer
+                        example: 196684
+                      name: 
+                        type: string
+                        example: Duale Hochschule Gera Eisenach
+                      logo:
+                        type: object
+                        properties:
+                          id: 
+                            type: integer
+                            example: 7110
+                          url: 
+                            type: string
+                            example: http://prod-server.infosysbub-kursnet-rest-dmz.svc.cluster.local:8080/ct/v1/bildungsanbieter/196684/logos/7110
+                          externalURL: 
+                            type: string
+                            example: https://rest.arbeitsagentur.de/infosysbub/kursnet-rest/ct/v1/bildungsanbieter/196684/logos/7110
+                  studiBezeichnung: 
+                    type: string
+                    example: Wirtschaftsingenieurwesen/Digitale Industrie Bachelor
+                  studiInhalt: 
+                    type: string
+                    example: <p>Inhalte bitte bei der Hochschule erfragen</p>
+                  studiBeginn: 
+                    type: string
+                    example: Auf Anfrage
+                  studienort:
+                    type: object
+                    properties:
+                      strasse: 
+                        type: string
+                        example: Am Testweg 2
+                      ort: 
+                        type: string
+                        example: Feucht, Bayern
+                      postleitzahl: 
+                        type: string
+                        example: '90537'
+                      bundesland: 
+                        type: string
+                        example: Bayern
+                      staat: 
+                        type: string
+                        example: Deutschland
+                      postfach: 
+                        type: string
+                        example: null
+                      postfachOrt: 
+                        type: string
+                        example: null
+                      postfachPostleitzahl: 
+                        type: string
+                        example: null                                                                    
+                      postfachBundesland:
+                        type: string
+                        example: null                      
+                      postfachStaat: 
+                        type: string
+                        example: null                      
+                      location:
+                        type: object
+                        properties:
+                          lat: 
+                            type: number
+                            example: 40.9906
+                          lon: 
+                            type: number
+                            example: 7.3825
+                  studienfaecher:
+                    type: array
+                    items:
+                      type: string
+                      example: Wirtschaftsingenieurwesen (grundständig)
+                  fitFuerStudiumFacettenOptions: 
+                    type: array
+                    items:
+                      type: string
+                      example: []
+                  abschlussgrad:
+                    type: object
+                    properties:
+                      id: 
+                        type: integer
+                        example: 2
+                      label: 
+                        type: string
+                        example: Bachelor/Bakkalaureus
+                  region:
+                    type: object
+                    properties:
+                      id: 
+                        type: integer
+                        example: 15
+                      Key: 
+                        type: string
+                        example: TH
+                      label: 
+                        type: string
+                        example: Thüringen
+                  studienmodelle:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id: 
+                          type: integer
+                          example: 4
+                        label: 
+                          type: string
+                          example: praxis&shy;integrierend                      
+                  id: 
+                    type: integer
+                    example: 114959298
+                  externalLinks: 
+                    type: array
+                    items:
+                      type: string
+                      example: []
+                  hochschulart:
+                    type: object
+                    properties:
+                      id: 
+                        type: integer 
+                        example: 114
+                      label: 
+                        type: string
+                        example: Hochschule eigenen Typs
+                  studienform:
+                    type: object
+                    properties:
+                      id: 
+                        type: integer
+                        example: 1
+                      label: 
+                        type: string
+                        example: Vollzeitstudium
+                  studientyp:
+                    type: object
+                    properties:
+                      id: 
+                        type: integer
+                        example: 0
+                      label: 
+                        type: string 
+                        example: Studiengang grundständig
+              abstaende:
+                type: array
+                items: 
+                  type: string
+                  example: '[]'
+        maxErgebnisse: 
+          type: integer
+          example: 3369
+        filteredOutErgebnisse: 
+          type: integer
+          example: 14625
+        facetten: 
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+                example: st
+              typ: 
+                type: string
+                example: MULTI
+              auswahl: 
+                type: array
+                items:
+                  type: object
+                  properties:
+                    trefferAnzahl: 
+                      type: integer
+                      example: 2163
+                    preset:
+                      type: boolean
+                      example: false
+                    id: 
+                      type: integer
+                      example: 0
+                    label: 
+                      type: string
+                      example: Studiengang grundständig
+        studienangeboteIds: 
+          type: array
+          items:
+            type: string
+            example: "73435153"
+externalDocs:
+  description: "Weiterführende Dokumentation"
+  url: "https://github.com/AndreasFischer1985/studiensuche-api"
