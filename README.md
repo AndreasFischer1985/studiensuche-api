@@ -152,7 +152,7 @@ dkzIds einer Studienfeld(gruppe), idR. zwei Semikolon-getrennte Werte je Studien
 Ortsangabe nebst Postleitzahl und Koordinaten (z.B. Feucht_90537_11.224918_49.376701)
 
 
-**Parameter:** *page* (Optional)
+**Parameter:** *pg* (Optional)
 
 Seite…
 
