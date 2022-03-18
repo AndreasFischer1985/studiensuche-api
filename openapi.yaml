@@ -47,7 +47,7 @@ paths:
           schema:
             type: integer
           description: Studienfach-ID
-          example: "93683"
+          example: 93683
           required: false
 
         - in: query
@@ -79,12 +79,12 @@ paths:
           schema:
             type: string
             enum:
-                - Bundesweit
-                - 25
-                - 50
-                - 100
-                - 150
-                - 200
+                - "Bundesweit"
+                - "25"
+                - "50"
+                - "100"
+                - "150"
+                - "200"
           description: Umkreis - Bundesweit=Bundesweit, 25=25 km, 50=50 km, 100=100 km, 150=150 km, 200=200 km.
           example: "Bundesweit"
           required: false
@@ -200,7 +200,7 @@ paths:
               - 1
               - 2
           description: Eignungstest - 1=Studiencheck, 2=OSA. Mehrere Semikolon-getrennte Angaben möglich.
-          example: "1"
+          example: 1
           required: false
 
 security: 
@@ -277,20 +277,15 @@ components:
                         type: string
                         example: Deutschland
                       postfach: 
-                        type: string
-                        example: null
+                        type: string                        
                       postfachOrt: 
-                        type: string
-                        example: null
+                        type: string                        
                       postfachPostleitzahl: 
-                        type: string
-                        example: null                                                                    
+                        type: string                        
                       postfachBundesland:
-                        type: string
-                        example: null                      
+                        type: string                        
                       postfachStaat: 
-                        type: string
-                        example: null                      
+                        type: string                        
                       location:
                         type: object
                         properties:
@@ -309,7 +304,6 @@ components:
                     type: array
                     items:
                       type: string
-                      example: []
                   abschlussgrad:
                     type: object
                     properties:
@@ -348,8 +342,7 @@ components:
                   externalLinks: 
                     type: array
                     items:
-                      type: string
-                      example: []
+                      type: string                      
                   hochschulart:
                     type: object
                     properties:
