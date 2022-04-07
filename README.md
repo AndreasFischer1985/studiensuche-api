@@ -32,6 +32,9 @@ Der generierte Token muss bei folgenden GET-requests an https://rest.arbeitsagen
 Die Studiensuche ermöglicht, verfügbare Studienangebote mit verschiedenen GET-Parametern zu filtern. In der Regel ist dabei die Angabe mindestens eines Suchwortes (sw), Studienfeldes (sfe) oder eines Studienfachs (sfa) erforderlich. Eine Ausnahme von dieser Regel besteht beispielsweise darin, den Filter zum Studienmodell (smo) auf 5 (=Duales Studium) zu setzen.
 
 
+### Filter
+
+
 **Parameter:** *sw* (Optional)
 
 Suchwort, z.B. Informatikberufe
@@ -154,10 +157,8 @@ Ortsangabe nebst Postleitzahl und Koordinaten (z.B. Feucht_90537_11.224918_49.37
 
 **Parameter:** *pg* (Optional)
 
-Seite…
+Seite (beginnend mit 1).
 
-
-### Filter
 
 **Parameter:** *uk* (Optional)
 - Bundesweit
