@@ -4,7 +4,7 @@ Die Bundesagentur für Arbeit verfügt über eine der größten Datenbanken für
 
 ## Authentifizierung
 Die Authentifizierung funktioniert per OAuth 2 Client Credentials mit JWTs.
-Client Credentials sind folgende:
+Client Credentials sind, wie sich z.B. einem GET-request an https://web.arbeitsagentur.de/studiensuche/suche entnehmen lässt, folgende:
 
 **ClientID:** 5aee2cfe-1709-48a9-951d-eb48f8f73a74
 
