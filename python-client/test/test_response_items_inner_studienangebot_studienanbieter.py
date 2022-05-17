@@ -12,18 +12,22 @@
 import sys
 import unittest
 
-from deutschland.studiensuche.model.response_facetten_inner import ResponseFacettenInner
-from deutschland.studiensuche.model.response_items_inner import ResponseItemsInner
+from deutschland.studiensuche.model.response_items_inner_studienangebot_studienanbieter_logo import (
+    ResponseItemsInnerStudienangebotStudienanbieterLogo,
+)
 
 from deutschland import studiensuche
 
-globals()["ResponseFacettenInner"] = ResponseFacettenInner
-globals()["ResponseItemsInner"] = ResponseItemsInner
-from deutschland.studiensuche.model.response import Response
+globals()[
+    "ResponseItemsInnerStudienangebotStudienanbieterLogo"
+] = ResponseItemsInnerStudienangebotStudienanbieterLogo
+from deutschland.studiensuche.model.response_items_inner_studienangebot_studienanbieter import (
+    ResponseItemsInnerStudienangebotStudienanbieter,
+)
 
 
-class TestResponse(unittest.TestCase):
-    """Response unit test stubs"""
+class TestResponseItemsInnerStudienangebotStudienanbieter(unittest.TestCase):
+    """ResponseItemsInnerStudienangebotStudienanbieter unit test stubs"""
 
     def setUp(self):
         pass
@@ -31,10 +35,10 @@ class TestResponse(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testResponse(self):
-        """Test Response"""
+    def testResponseItemsInnerStudienangebotStudienanbieter(self):
+        """Test ResponseItemsInnerStudienangebotStudienanbieter"""
         # FIXME: construct object with mandatory attributes with example values
-        # model = Response()  # noqa: E501
+        # model = ResponseItemsInnerStudienangebotStudienanbieter()  # noqa: E501
         pass
 
 

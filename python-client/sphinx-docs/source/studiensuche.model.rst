@@ -12,114 +12,114 @@ studiensuche.model.response module
    :undoc-members:
    :show-inheritance:
 
-studiensuche.model.response\_auswahl module
--------------------------------------------
+studiensuche.model.response\_facetten\_inner module
+---------------------------------------------------
 
-.. automodule:: studiensuche.model.response_auswahl
+.. automodule:: studiensuche.model.response_facetten_inner
    :members:
    :undoc-members:
    :show-inheritance:
 
-studiensuche.model.response\_facetten module
---------------------------------------------
-
-.. automodule:: studiensuche.model.response_facetten
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-studiensuche.model.response\_items module
------------------------------------------
-
-.. automodule:: studiensuche.model.response_items
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-studiensuche.model.response\_studienangebot module
---------------------------------------------------
-
-.. automodule:: studiensuche.model.response_studienangebot
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-studiensuche.model.response\_studienangebot\_abschlussgrad module
------------------------------------------------------------------
-
-.. automodule:: studiensuche.model.response_studienangebot_abschlussgrad
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-studiensuche.model.response\_studienangebot\_hochschulart module
-----------------------------------------------------------------
-
-.. automodule:: studiensuche.model.response_studienangebot_hochschulart
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-studiensuche.model.response\_studienangebot\_region module
-----------------------------------------------------------
-
-.. automodule:: studiensuche.model.response_studienangebot_region
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-studiensuche.model.response\_studienangebot\_studienanbieter module
+studiensuche.model.response\_facetten\_inner\_auswahl\_inner module
 -------------------------------------------------------------------
 
-.. automodule:: studiensuche.model.response_studienangebot_studienanbieter
+.. automodule:: studiensuche.model.response_facetten_inner_auswahl_inner
    :members:
    :undoc-members:
    :show-inheritance:
 
-studiensuche.model.response\_studienangebot\_studienanbieter\_logo module
--------------------------------------------------------------------------
+studiensuche.model.response\_items\_inner module
+------------------------------------------------
 
-.. automodule:: studiensuche.model.response_studienangebot_studienanbieter_logo
+.. automodule:: studiensuche.model.response_items_inner
    :members:
    :undoc-members:
    :show-inheritance:
 
-studiensuche.model.response\_studienangebot\_studienform module
----------------------------------------------------------------
+studiensuche.model.response\_items\_inner\_studienangebot module
+----------------------------------------------------------------
 
-.. automodule:: studiensuche.model.response_studienangebot_studienform
+.. automodule:: studiensuche.model.response_items_inner_studienangebot
    :members:
    :undoc-members:
    :show-inheritance:
 
-studiensuche.model.response\_studienangebot\_studienmodelle module
-------------------------------------------------------------------
+studiensuche.model.response\_items\_inner\_studienangebot\_abschlussgrad module
+-------------------------------------------------------------------------------
 
-.. automodule:: studiensuche.model.response_studienangebot_studienmodelle
+.. automodule:: studiensuche.model.response_items_inner_studienangebot_abschlussgrad
    :members:
    :undoc-members:
    :show-inheritance:
 
-studiensuche.model.response\_studienangebot\_studienort module
---------------------------------------------------------------
+studiensuche.model.response\_items\_inner\_studienangebot\_hochschulart module
+------------------------------------------------------------------------------
 
-.. automodule:: studiensuche.model.response_studienangebot_studienort
+.. automodule:: studiensuche.model.response_items_inner_studienangebot_hochschulart
    :members:
    :undoc-members:
    :show-inheritance:
 
-studiensuche.model.response\_studienangebot\_studienort\_location module
+studiensuche.model.response\_items\_inner\_studienangebot\_region module
 ------------------------------------------------------------------------
 
-.. automodule:: studiensuche.model.response_studienangebot_studienort_location
+.. automodule:: studiensuche.model.response_items_inner_studienangebot_region
    :members:
    :undoc-members:
    :show-inheritance:
 
-studiensuche.model.response\_studienangebot\_studientyp module
---------------------------------------------------------------
+studiensuche.model.response\_items\_inner\_studienangebot\_studienanbieter module
+---------------------------------------------------------------------------------
 
-.. automodule:: studiensuche.model.response_studienangebot_studientyp
+.. automodule:: studiensuche.model.response_items_inner_studienangebot_studienanbieter
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+studiensuche.model.response\_items\_inner\_studienangebot\_studienanbieter\_logo module
+---------------------------------------------------------------------------------------
+
+.. automodule:: studiensuche.model.response_items_inner_studienangebot_studienanbieter_logo
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+studiensuche.model.response\_items\_inner\_studienangebot\_studienform module
+-----------------------------------------------------------------------------
+
+.. automodule:: studiensuche.model.response_items_inner_studienangebot_studienform
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+studiensuche.model.response\_items\_inner\_studienangebot\_studienmodelle\_inner module
+---------------------------------------------------------------------------------------
+
+.. automodule:: studiensuche.model.response_items_inner_studienangebot_studienmodelle_inner
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+studiensuche.model.response\_items\_inner\_studienangebot\_studienort module
+----------------------------------------------------------------------------
+
+.. automodule:: studiensuche.model.response_items_inner_studienangebot_studienort
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+studiensuche.model.response\_items\_inner\_studienangebot\_studienort\_location module
+--------------------------------------------------------------------------------------
+
+.. automodule:: studiensuche.model.response_items_inner_studienangebot_studienort_location
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+studiensuche.model.response\_items\_inner\_studienangebot\_studientyp module
+----------------------------------------------------------------------------
+
+.. automodule:: studiensuche.model.response_items_inner_studienangebot_studientyp
    :members:
    :undoc-members:
    :show-inheritance:

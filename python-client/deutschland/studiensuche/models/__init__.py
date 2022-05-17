@@ -10,39 +10,41 @@
 # sys.setrecursionlimit(n)
 
 from deutschland.studiensuche.model.response import Response
-from deutschland.studiensuche.model.response_auswahl import ResponseAuswahl
-from deutschland.studiensuche.model.response_facetten import ResponseFacetten
-from deutschland.studiensuche.model.response_items import ResponseItems
-from deutschland.studiensuche.model.response_studienangebot import (
-    ResponseStudienangebot,
+from deutschland.studiensuche.model.response_facetten_inner import ResponseFacettenInner
+from deutschland.studiensuche.model.response_facetten_inner_auswahl_inner import (
+    ResponseFacettenInnerAuswahlInner,
 )
-from deutschland.studiensuche.model.response_studienangebot_abschlussgrad import (
-    ResponseStudienangebotAbschlussgrad,
+from deutschland.studiensuche.model.response_items_inner import ResponseItemsInner
+from deutschland.studiensuche.model.response_items_inner_studienangebot import (
+    ResponseItemsInnerStudienangebot,
 )
-from deutschland.studiensuche.model.response_studienangebot_hochschulart import (
-    ResponseStudienangebotHochschulart,
+from deutschland.studiensuche.model.response_items_inner_studienangebot_abschlussgrad import (
+    ResponseItemsInnerStudienangebotAbschlussgrad,
 )
-from deutschland.studiensuche.model.response_studienangebot_region import (
-    ResponseStudienangebotRegion,
+from deutschland.studiensuche.model.response_items_inner_studienangebot_hochschulart import (
+    ResponseItemsInnerStudienangebotHochschulart,
 )
-from deutschland.studiensuche.model.response_studienangebot_studienanbieter import (
-    ResponseStudienangebotStudienanbieter,
+from deutschland.studiensuche.model.response_items_inner_studienangebot_region import (
+    ResponseItemsInnerStudienangebotRegion,
 )
-from deutschland.studiensuche.model.response_studienangebot_studienanbieter_logo import (
-    ResponseStudienangebotStudienanbieterLogo,
+from deutschland.studiensuche.model.response_items_inner_studienangebot_studienanbieter import (
+    ResponseItemsInnerStudienangebotStudienanbieter,
 )
-from deutschland.studiensuche.model.response_studienangebot_studienform import (
-    ResponseStudienangebotStudienform,
+from deutschland.studiensuche.model.response_items_inner_studienangebot_studienanbieter_logo import (
+    ResponseItemsInnerStudienangebotStudienanbieterLogo,
 )
-from deutschland.studiensuche.model.response_studienangebot_studienmodelle import (
-    ResponseStudienangebotStudienmodelle,
+from deutschland.studiensuche.model.response_items_inner_studienangebot_studienform import (
+    ResponseItemsInnerStudienangebotStudienform,
 )
-from deutschland.studiensuche.model.response_studienangebot_studienort import (
-    ResponseStudienangebotStudienort,
+from deutschland.studiensuche.model.response_items_inner_studienangebot_studienmodelle_inner import (
+    ResponseItemsInnerStudienangebotStudienmodelleInner,
 )
-from deutschland.studiensuche.model.response_studienangebot_studienort_location import (
-    ResponseStudienangebotStudienortLocation,
+from deutschland.studiensuche.model.response_items_inner_studienangebot_studienort import (
+    ResponseItemsInnerStudienangebotStudienort,
 )
-from deutschland.studiensuche.model.response_studienangebot_studientyp import (
-    ResponseStudienangebotStudientyp,
+from deutschland.studiensuche.model.response_items_inner_studienangebot_studienort_location import (
+    ResponseItemsInnerStudienangebotStudienortLocation,
+)
+from deutschland.studiensuche.model.response_items_inner_studienangebot_studientyp import (
+    ResponseItemsInnerStudienangebotStudientyp,
 )
