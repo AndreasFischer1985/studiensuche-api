@@ -1,5 +1,28 @@
+#----------------
+# Simple Example
+#----------------
 install.packages(c("devtools","rjson","httr"))
 devtools::install_github("AndreasFischer1985/qqBaseX")
+clientId="5aee2cfe-1709-48a9-951d-eb48f8f73a74"
+clientSecret="3309a57a-9214-40db-9abe-28b1bb30c08c"
+postData=list( "grant_type"="client_credentials","client_id"=clientId,"client_secret"=clientSecret) 
+token_request=httr::POST(
+        url="https://rest.arbeitsagentur.de/oauth/gettoken_cc",
+        body=postData,encode="form",
+        config=httr::config(connecttimeout=60))
+token=httr::content(token_request, as='parsed')$access_token
+url="https://rest.arbeitsagentur.de/infosysbub/studisu/pc/v1/studienangebote?smo=5"
+data_request=httr::GET(url=url, httr::add_headers(.headers=c("OAuthAccessToken"=token)),
+        config=httr::config(connecttimeout=60))
+data_request
+data=httr::content(data_request)
+maxPage=round(data[["maxErgebnisse"]]/20)
+completeData=lapply(1:maxPage,function(i){
+        print(i);
+	httr::content(httr::GET(url=paste0(url,"&pg=",i), httr::add_headers(.headers=c("OAuthAccessToken"=token)),
+        	config=httr::config(connecttimeout=60)))
+})
+
 
 #------------------------------------------------------------------
 # Get clientID & clientSecret from https://web.arbeitsagentur.de/studiensuche/suche
