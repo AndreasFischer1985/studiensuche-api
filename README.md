@@ -12,7 +12,7 @@ Client Credentials sind, wie sich z.B. einem GET-request an https://web.arbeitsa
 
 **grant_type:** client_credentials
 
-Die Credentials sind im body POST-request an https://rest.arbeitsagentur.de/oauth/gettoken_cc zu senden.
+Die Credentials sind im body eines POST-request an https://rest.arbeitsagentur.de/oauth/gettoken_cc zu senden.
 
 ```bash
 token=$(curl \
