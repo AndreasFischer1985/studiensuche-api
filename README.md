@@ -6,19 +6,18 @@ Die Bundesagentur für Arbeit verfügt über eine der größten Datenbanken für
 Die Authentifizierung funktioniert per OAuth 2 Client Credentials mit JWTs.
 Client Credentials sind, wie sich z.B. einem GET-request an https://web.arbeitsagentur.de/studiensuche/suche entnehmen lässt, folgende:
 
-**ClientID:** 5aee2cfe-1709-48a9-951d-eb48f8f73a74
+**client_id:** 5aee2cfe-1709-48a9-951d-eb48f8f73a74
 
-**ClientSecret:** 3309a57a-9214-40db-9abe-28b1bb30c08c
+**client_secret:** 3309a57a-9214-40db-9abe-28b1bb30c08c
+
+**grant_type:** client_credentials
+
+Die Credentials sind im body POST-request an https://rest.arbeitsagentur.de/oauth/gettoken_cc zu senden.
 
 ```bash
-curl \
--H 'Host: rest.arbeitsagentur.de' \
--H 'Accept: */*' \
--H 'Content-Type: application/x-www-form-urlencoded; charset=utf-8' \
--H 'Accept-Language: de,en-US;q=0.7,en;q=0.3' \
--H 'User-Agent:  Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0' \
---data-binary "client_id=5aee2cfe-1709-48a9-951d-eb48f8f73a74&client_secret=3309a57a-9214-40db-9abe-28b1bb30c08c&grant_type=client_credentials" \
---compressed 'https://rest.arbeitsagentur.de/oauth/gettoken_cc'
+token=$(curl \
+-d "client_id=5aee2cfe-1709-48a9-951d-eb48f8f73a74&client_secret=3309a57a-9214-40db-9abe-28b1bb30c08c&grant_type=client_credentials" \
+-X POST 'https://rest.arbeitsagentur.de/oauth/gettoken_cc' |grep -Eo '[^"]{500,}'|head -n 1)
 ```
 
 Der generierte Token muss bei folgenden GET-requests an https://rest.arbeitsagentur.de/infosysbub/studisu/pc/v1/studienangebote im header als 'OAuthAccessToken' inkludiert werden.
@@ -254,16 +253,7 @@ Eignungstest: 1=Studiencheck, 2=OSA. Mehrere Semikolon-getrennte Angaben möglic
 ### Beispiel:
 
 ```bash
-studienangebot=$(curl -m 60 -H "Host: rest.arbeitsagentur.de" \
--H "User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:88.0) Gecko/20100101 Firefox/88.0" \
--H "Accept: application/json, text/plain, */*" \
--H "Accept-Language: de,en-US;q=0.7,en;q=0.3" \
--H "Accept-Encoding: gzip, deflate, br" \
--H "Origin: https://web.arbeitsagentur.de" \
--H "DNT: 1" \
--H "Connection: keep-alive" \
--H "Pragma: no-cache" \
--H "Cache-Control: no-cache" \
+studienangebot=$(curl -m 60 \
 -H "OAuthAccessToken: $token" \
 'https://rest.arbeitsagentur.de/infosysbub/studisu/pc/v1/studienangebote?sw=IT-Security-Manager')
 ```
