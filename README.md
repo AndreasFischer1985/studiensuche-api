@@ -185,18 +185,21 @@ Umkreis:  Bundesweit=Bundesweit, 25=25 km, 50=50 km, 100=100 km, 150=150 km, 200
 - ST
 - SH
 - TH
+- iA
 
-Region/Bundesland: BW=Baden-Württemberg, BY=Bayern, BE=Berlin, BB=Brandenburg, HB=Bremen, HH=Hamburg, HE=Hessen, MV=Mecklenburg-Vorpommern, NI=Niedersachsen, NW=Nordrhei-Westfalen, RP=Rheinland-Pfalz, SL=Saarland, SN=Sachsen, ST=Sachsen-Anhalt, SH=Schleswig-Holstein, TH=Thüringen. Mehrere Komma-getrennte Angaben möglich (z.B. re=TH,BW).
+Region/Bundesland: BW=Bade-Württemberg, BY=Bayern, BE=Berlin, BB=Brandenburg, HB=Bremen, HH=Hamburg, HE=Hessen, MV=Mecklenburg-Vorpommern, NI=Niedersachsen, NW=Nordrhei-Westfalen, RP=Rheinland-Pfalz, SL=Saarland, SN=Sachsen, ST=Sachsen-Anhalt, SH=Schleswig-Holstein, TH=Thüringen, iA=Österreich. Mehrere Semikolon-getrennte Angaben möglich (z.B. re=TH;BW).
 
 
 **Parameter:** *sfo* (Optional)
+- 0
 - 1
 - 2
 - 3
 - 4
 - 5
+- 6
 
-Studienform: 1=Vollzeitstudium, 2=Teilzeitstudium, 3=Wochenendveranstaltung, 4=Fernstudium, 5=Selbststudium. Mehrere Semikolon-getrennte Angaben möglich.
+Studienform: 0=Auf Anfrage, 1=Vollzeitstudium, 2=Teilzeitstudium, 3=Wochenendveranstaltung, 4=Fernstudium, 5=Selbststudium, 6=Blockstudium. Mehrere Semikolon-getrennte Angaben möglich.
 
 
 **Parameter:** *st* (Optional)
