@@ -51,8 +51,8 @@ with studiensuche.ApiClient(configuration) as api_client:
     orte = "Feucht_90537_11.224918_49.376701" # str | Ortsangabe nebst Postleitzahl und Koordinaten (optional)
     pg = 1 # int | Ergebnissseite (optional)
     uk = "Bundesweit" # str | Umkreis - Bundesweit=Bundesweit, 25=25 km, 50=50 km, 100=100 km, 150=150 km, 200=200 km. (optional)
-    re = "BW" # str | Region/Bundesland - BW=Baden-Württemberg, BY=Bayern, BE=Berlin, BB=Brandenburg, HB=Bremen, HH=Hamburg, HE=Hessen, MV=Mecklenburg-Vorpommern, NI=Niedersachsen, NW=Nordrhei-Westfalen, RP=Rheinland-Pfalz, SL=Saarland, SN=Sachsen, ST=Sachsen-Anhalt, SH=Schleswig-Holstein, TH=Thüringen. Mehrere Komma-getrennte Angaben möglich. (optional)
-    sfo = 1 # int | Studienform - 1=Vollzeitstudium, 2=Teilzeitstudium, 3=Wochenendveranstaltung, 4=Fernstudium, 5=Selbststudium. Mehrere Semikolon-getrennte Angaben möglich. (optional)
+    re = "BW" # str | Region/Bundesland - BW=Baden-Württemberg, BY=Bayern, BE=Berlin, BB=Brandenburg, HB=Bremen, HH=Hamburg, HE=Hessen, MV=Mecklenburg-Vorpommern, NI=Niedersachsen, NW=Nordrhei-Westfalen, RP=Rheinland-Pfalz, SL=Saarland, SN=Sachsen, ST=Sachsen-Anhalt, SH=Schleswig-Holstein, TH=Thüringen, iA=Österreich. Mehrere Semikolon-getrennte Angaben möglich. (optional)
+    sfo = 1 # int | Studienform - 0=Auf Anfrage, 1=Vollzeitstudium, 2=Teilzeitstudium, 3=Wochenendveranstaltung, 4=Fernstudium, 5=Selbststudium, 6=Blockstudium. Mehrere Semikolon-getrennte Angaben möglich. (optional)
     st = 1 # int | Studientyp - 0=Studiengang grundständig, 1=Studiengang weiterführend. (optional)
     smo = 5 # int | Studiengangmodell - 1=ausbildungsintegrierend, 2=berufsintegrierend, 3=berufsbegleitend, 4=praxisintegrierend, 5=Duales Studium allgemein. Mehrere Semikolon-getrennte Angaben möglich. (optional)
     abg = 0 # int | Studiengangsabschlussgrad - 0=ohne Angabe, 1=Abschlussprüfung, 2=Bachelor, 3=Diplom, 4=Diplom(FH), 10=Master, 12=Staatsexamen (optional)
@@ -81,8 +81,8 @@ Name | Type | Description  | Notes
  **orte** | **str**| Ortsangabe nebst Postleitzahl und Koordinaten | [optional]
  **pg** | **int**| Ergebnissseite | [optional]
  **uk** | **str**| Umkreis - Bundesweit&#x3D;Bundesweit, 25&#x3D;25 km, 50&#x3D;50 km, 100&#x3D;100 km, 150&#x3D;150 km, 200&#x3D;200 km. | [optional]
- **re** | **str**| Region/Bundesland - BW&#x3D;Baden-Württemberg, BY&#x3D;Bayern, BE&#x3D;Berlin, BB&#x3D;Brandenburg, HB&#x3D;Bremen, HH&#x3D;Hamburg, HE&#x3D;Hessen, MV&#x3D;Mecklenburg-Vorpommern, NI&#x3D;Niedersachsen, NW&#x3D;Nordrhei-Westfalen, RP&#x3D;Rheinland-Pfalz, SL&#x3D;Saarland, SN&#x3D;Sachsen, ST&#x3D;Sachsen-Anhalt, SH&#x3D;Schleswig-Holstein, TH&#x3D;Thüringen. Mehrere Komma-getrennte Angaben möglich. | [optional]
- **sfo** | **int**| Studienform - 1&#x3D;Vollzeitstudium, 2&#x3D;Teilzeitstudium, 3&#x3D;Wochenendveranstaltung, 4&#x3D;Fernstudium, 5&#x3D;Selbststudium. Mehrere Semikolon-getrennte Angaben möglich. | [optional]
+ **re** | **str**| Region/Bundesland - BW&#x3D;Baden-Württemberg, BY&#x3D;Bayern, BE&#x3D;Berlin, BB&#x3D;Brandenburg, HB&#x3D;Bremen, HH&#x3D;Hamburg, HE&#x3D;Hessen, MV&#x3D;Mecklenburg-Vorpommern, NI&#x3D;Niedersachsen, NW&#x3D;Nordrhei-Westfalen, RP&#x3D;Rheinland-Pfalz, SL&#x3D;Saarland, SN&#x3D;Sachsen, ST&#x3D;Sachsen-Anhalt, SH&#x3D;Schleswig-Holstein, TH&#x3D;Thüringen, iA&#x3D;Österreich. Mehrere Semikolon-getrennte Angaben möglich. | [optional]
+ **sfo** | **int**| Studienform - 0&#x3D;Auf Anfrage, 1&#x3D;Vollzeitstudium, 2&#x3D;Teilzeitstudium, 3&#x3D;Wochenendveranstaltung, 4&#x3D;Fernstudium, 5&#x3D;Selbststudium, 6&#x3D;Blockstudium. Mehrere Semikolon-getrennte Angaben möglich. | [optional]
  **st** | **int**| Studientyp - 0&#x3D;Studiengang grundständig, 1&#x3D;Studiengang weiterführend. | [optional]
  **smo** | **int**| Studiengangmodell - 1&#x3D;ausbildungsintegrierend, 2&#x3D;berufsintegrierend, 3&#x3D;berufsbegleitend, 4&#x3D;praxisintegrierend, 5&#x3D;Duales Studium allgemein. Mehrere Semikolon-getrennte Angaben möglich. | [optional]
  **abg** | **int**| Studiengangsabschlussgrad - 0&#x3D;ohne Angabe, 1&#x3D;Abschlussprüfung, 2&#x3D;Bachelor, 3&#x3D;Diplom, 4&#x3D;Diplom(FH), 10&#x3D;Master, 12&#x3D;Staatsexamen | [optional]

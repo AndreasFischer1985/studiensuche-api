@@ -105,8 +105,9 @@ class DefaultApi(object):
                         "ST": "ST",
                         "SH": "SH",
                         "TH": "TH",
+                        "IA": "iA",
                     },
-                    ("sfo",): {"1": 1, "2": 2, "3": 3, "4": 4, "5": 5},
+                    ("sfo",): {"0": 0, "1": 1, "2": 2, "3": 3, "4": 4, "5": 5, "6": 6},
                     ("st",): {"0": 0, "1": 1},
                     ("smo",): {"1": 1, "2": 2, "3": 3, "4": 4, "5": 5},
                     ("abg",): {
@@ -203,8 +204,8 @@ class DefaultApi(object):
             orte (str): Ortsangabe nebst Postleitzahl und Koordinaten. [optional]
             pg (int): Ergebnissseite. [optional]
             uk (str): Umkreis - Bundesweit=Bundesweit, 25=25 km, 50=50 km, 100=100 km, 150=150 km, 200=200 km.. [optional]
-            re (str): Region/Bundesland - BW=Baden-Württemberg, BY=Bayern, BE=Berlin, BB=Brandenburg, HB=Bremen, HH=Hamburg, HE=Hessen, MV=Mecklenburg-Vorpommern, NI=Niedersachsen, NW=Nordrhei-Westfalen, RP=Rheinland-Pfalz, SL=Saarland, SN=Sachsen, ST=Sachsen-Anhalt, SH=Schleswig-Holstein, TH=Thüringen. Mehrere Komma-getrennte Angaben möglich.. [optional]
-            sfo (int): Studienform - 1=Vollzeitstudium, 2=Teilzeitstudium, 3=Wochenendveranstaltung, 4=Fernstudium, 5=Selbststudium. Mehrere Semikolon-getrennte Angaben möglich.. [optional]
+            re (str): Region/Bundesland - BW=Baden-Württemberg, BY=Bayern, BE=Berlin, BB=Brandenburg, HB=Bremen, HH=Hamburg, HE=Hessen, MV=Mecklenburg-Vorpommern, NI=Niedersachsen, NW=Nordrhei-Westfalen, RP=Rheinland-Pfalz, SL=Saarland, SN=Sachsen, ST=Sachsen-Anhalt, SH=Schleswig-Holstein, TH=Thüringen, iA=Österreich. Mehrere Semikolon-getrennte Angaben möglich.. [optional]
+            sfo (int): Studienform - 0=Auf Anfrage, 1=Vollzeitstudium, 2=Teilzeitstudium, 3=Wochenendveranstaltung, 4=Fernstudium, 5=Selbststudium, 6=Blockstudium. Mehrere Semikolon-getrennte Angaben möglich.. [optional]
             st (int): Studientyp - 0=Studiengang grundständig, 1=Studiengang weiterführend.. [optional]
             smo (int): Studiengangmodell - 1=ausbildungsintegrierend, 2=berufsintegrierend, 3=berufsbegleitend, 4=praxisintegrierend, 5=Duales Studium allgemein. Mehrere Semikolon-getrennte Angaben möglich.. [optional]
             abg (int): Studiengangsabschlussgrad - 0=ohne Angabe, 1=Abschlussprüfung, 2=Bachelor, 3=Diplom, 4=Diplom(FH), 10=Master, 12=Staatsexamen. [optional]
