@@ -54,7 +54,7 @@ paths:
           name: sfe
           schema:
             type: string
-          description: dkzIds einer Studienfeld(gruppe), idR. zwei Semikolon-getrennte Werte je Studienfeld(gruppe)
+          description: dkzIds einer Studienfeld(gruppe), idR. zwei Semikolon-getrennte Werte je Studienfeld(gruppe).
           example: "94175;94350"
           required: false
 
@@ -62,7 +62,7 @@ paths:
           name: orte
           schema:
             type: string
-          description: Ortsangabe nebst Postleitzahl und Koordinaten
+          description: Ortsangabe nebst Postleitzahl und Koordinaten (longitude und latitude) jeweils durch Unterstriche getrennt.
           example: "Feucht_90537_11.224918_49.376701"
           required: false
 
