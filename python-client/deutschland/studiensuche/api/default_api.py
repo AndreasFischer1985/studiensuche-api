@@ -200,8 +200,8 @@ class DefaultApi(object):
         Keyword Args:
             sw (str): Suchwort. [optional]
             sfa (int): Studienfach-ID. [optional]
-            sfe (str): dkzIds einer Studienfeld(gruppe), idR. zwei Semikolon-getrennte Werte je Studienfeld(gruppe). [optional]
-            orte (str): Ortsangabe nebst Postleitzahl und Koordinaten. [optional]
+            sfe (str): dkzIds einer Studienfeld(gruppe), idR. zwei Semikolon-getrennte Werte je Studienfeld(gruppe).. [optional]
+            orte (str): Ortsangabe nebst Postleitzahl und Koordinaten (longitude und latitude) jeweils durch Unterstriche getrennt.. [optional]
             pg (int): Ergebnissseite. [optional]
             uk (str): Umkreis - Bundesweit=Bundesweit, 25=25 km, 50=50 km, 100=100 km, 150=150 km, 200=200 km.. [optional]
             re (str): Region/Bundesland - BW=Baden-Württemberg, BY=Bayern, BE=Berlin, BB=Brandenburg, HB=Bremen, HH=Hamburg, HE=Hessen, MV=Mecklenburg-Vorpommern, NI=Niedersachsen, NW=Nordrhei-Westfalen, RP=Rheinland-Pfalz, SL=Saarland, SN=Sachsen, ST=Sachsen-Anhalt, SH=Schleswig-Holstein, TH=Thüringen, iA=Österreich. Mehrere Semikolon-getrennte Angaben möglich.. [optional]

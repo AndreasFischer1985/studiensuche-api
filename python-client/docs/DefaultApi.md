@@ -47,8 +47,8 @@ with studiensuche.ApiClient(configuration) as api_client:
     api_instance = default_api.DefaultApi(api_client)
     sw = "Informatikberufe" # str | Suchwort (optional)
     sfa = 93683 # int | Studienfach-ID (optional)
-    sfe = "94175;94350" # str | dkzIds einer Studienfeld(gruppe), idR. zwei Semikolon-getrennte Werte je Studienfeld(gruppe) (optional)
-    orte = "Feucht_90537_11.224918_49.376701" # str | Ortsangabe nebst Postleitzahl und Koordinaten (optional)
+    sfe = "94175;94350" # str | dkzIds einer Studienfeld(gruppe), idR. zwei Semikolon-getrennte Werte je Studienfeld(gruppe). (optional)
+    orte = "Feucht_90537_11.224918_49.376701" # str | Ortsangabe nebst Postleitzahl und Koordinaten (longitude und latitude) jeweils durch Unterstriche getrennt. (optional)
     pg = 1 # int | Ergebnissseite (optional)
     uk = "Bundesweit" # str | Umkreis - Bundesweit=Bundesweit, 25=25 km, 50=50 km, 100=100 km, 150=150 km, 200=200 km. (optional)
     re = "BW" # str | Region/Bundesland - BW=Baden-Württemberg, BY=Bayern, BE=Berlin, BB=Brandenburg, HB=Bremen, HH=Hamburg, HE=Hessen, MV=Mecklenburg-Vorpommern, NI=Niedersachsen, NW=Nordrhei-Westfalen, RP=Rheinland-Pfalz, SL=Saarland, SN=Sachsen, ST=Sachsen-Anhalt, SH=Schleswig-Holstein, TH=Thüringen, iA=Österreich. Mehrere Semikolon-getrennte Angaben möglich. (optional)
@@ -77,8 +77,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **sw** | **str**| Suchwort | [optional]
  **sfa** | **int**| Studienfach-ID | [optional]
- **sfe** | **str**| dkzIds einer Studienfeld(gruppe), idR. zwei Semikolon-getrennte Werte je Studienfeld(gruppe) | [optional]
- **orte** | **str**| Ortsangabe nebst Postleitzahl und Koordinaten | [optional]
+ **sfe** | **str**| dkzIds einer Studienfeld(gruppe), idR. zwei Semikolon-getrennte Werte je Studienfeld(gruppe). | [optional]
+ **orte** | **str**| Ortsangabe nebst Postleitzahl und Koordinaten (longitude und latitude) jeweils durch Unterstriche getrennt. | [optional]
  **pg** | **int**| Ergebnissseite | [optional]
  **uk** | **str**| Umkreis - Bundesweit&#x3D;Bundesweit, 25&#x3D;25 km, 50&#x3D;50 km, 100&#x3D;100 km, 150&#x3D;150 km, 200&#x3D;200 km. | [optional]
  **re** | **str**| Region/Bundesland - BW&#x3D;Baden-Württemberg, BY&#x3D;Bayern, BE&#x3D;Berlin, BB&#x3D;Brandenburg, HB&#x3D;Bremen, HH&#x3D;Hamburg, HE&#x3D;Hessen, MV&#x3D;Mecklenburg-Vorpommern, NI&#x3D;Niedersachsen, NW&#x3D;Nordrhei-Westfalen, RP&#x3D;Rheinland-Pfalz, SL&#x3D;Saarland, SN&#x3D;Sachsen, ST&#x3D;Sachsen-Anhalt, SH&#x3D;Schleswig-Holstein, TH&#x3D;Thüringen, iA&#x3D;Österreich. Mehrere Semikolon-getrennte Angaben möglich. | [optional]
