@@ -206,19 +206,17 @@ paths:
           example: 1
           required: false
 
-security: 
-  - clientCredAuth: 
-    - "read"
+security:
+  - APIKeyHeaders: []
 
-components: 
+components:
   securitySchemes:
-    clientCredAuth:    # <---- arbitrary name
-      type: oauth2
-      description: "Die Authentifizierung funktioniert per OAuth-2-Client Credentials mit JWTs. Client Credentials sind folgende:<br><br> **ClientID:**  5aee2cfe-1709-48a9-951d-eb48f8f73a74 <br> **ClientSecret:** 3309a57a-9214-40db-9abe-28b1bb30c08c<br><br>Der generierte Token muss bei folgenden GET-requests an https://rest.arbeitsagentur.de/infosysbub/studisu/pc/v1/studienangebote im header als 'OAuthAccessToken' inkludiert werden."
-      flows:
-        clientCredentials:  
-          tokenUrl: https://rest.arbeitsagentur.de/oauth/gettoken_cc
-          scopes: {}
+    APIKeyHeaders:    
+      type: apiKey
+      in: header
+      name: X-API-Key
+      description: "X-API-Key ist die Client-ID 5aee2cfe-1709-48a9-951d-eb48f8f73a74"
+
   schemas:    
     Response:
       type: object
