@@ -45,6 +45,9 @@ Suchwort, z.B. Informatikberufe
 
 Studienfach-ID, z.B. 93683 für Bioinformatik
 
+Die Abfrage aller verfügbaren Studienfächer ist aktuell noch nicht dokumentiert, sollte aber mit folgenden Requests möglich sein:
+Ein GET-request an "https://rest.arbeitsagentur.de/infosysbub/studisu/pc/v1/studienfelder" mit der client_id als header-Feld "X-API-Key" liefert eine Liste aller Studienfeldgruppen und Studienfelder (nebst dkzIds); Anschließend liefert ein identisch aufgebauter GET-request an "https://rest.arbeitsagentur.de/infosysbub/studisu/pc/v1/studienfeldinformationen?dkz={dkzId}" (bei dem dkzId durch eine gültige Id aus der Antwort des ersten Requests ersetzt werden muss, z.B. 93796) Informationen zu den diesbezüglichen Studienfächern (inkl. Bezeichnung und id). Alternativ sollte sich ein vollständiger Überblick über alle gelisteten Studienfächer auch über die [BERUFENET-API](https://github.com/AndreasFischer1985/berufenet-api) realisieren lassen.
+
 
 **Parameter:** *sfe* (Optional)
 
