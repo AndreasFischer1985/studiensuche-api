@@ -6,23 +6,9 @@ Die Bundesagentur für Arbeit verfügt über eine der größten Datenbanken für
 Die Authentifizierung funktioniert per OAuth 2 Client Credentials mit JWTs.
 Client Credentials sind, wie sich z.B. einem GET-request an https://web.arbeitsagentur.de/studiensuche/suche entnehmen lässt, folgende:
 
-**client_id:** 5aee2cfe-1709-48a9-951d-eb48f8f73a74
+**client_id:** infosysbub-studisu
 
-**client_secret:** 3309a57a-9214-40db-9abe-28b1bb30c08c
-
-**grant_type:** client_credentials
-
-Die Credentials sind im body eines POST-request an https://rest.arbeitsagentur.de/oauth/gettoken_cc zu senden.
-
-```bash
-token=$(curl \
--d "client_id=5aee2cfe-1709-48a9-951d-eb48f8f73a74&client_secret=3309a57a-9214-40db-9abe-28b1bb30c08c&grant_type=client_credentials" \
--X POST 'https://rest.arbeitsagentur.de/oauth/gettoken_cc' |grep -Eo '[^"]{500,}'|head -n 1)
-```
-
-Der generierte Token muss bei folgenden GET-requests an https://rest.arbeitsagentur.de/infosysbub/studisu/pc/v1/studienangebote im header als 'OAuthAccessToken' inkludiert werden.
-
-**Hinweis:** Alternativ kann man bei folgenden GET-requests auch direkt die *client_id* als Header-Parameter *'X-API-Key'* übergeben - *'OAuthAccessToken'* ist in diesem Fall nicht erforderlich. 🚀
+Bei folgenden GET-requests ist die *client_id* als Header-Parameter *'X-API-Key'* übergeben - die früher gängige Authentifizierung über *'OAuthAccessToken'* ist nicht mehr erforderlich. 🚀
 
 
 ## Studiensuche
