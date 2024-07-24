@@ -3,12 +3,11 @@ Die Bundesagentur für Arbeit verfügt über eine der größten Datenbanken für
 
 
 ## Authentifizierung
-Die Authentifizierung funktioniert per OAuth 2 Client Credentials mit JWTs.
-Client Credentials sind, wie sich z.B. einem GET-request an https://web.arbeitsagentur.de/studiensuche/suche entnehmen lässt, folgende:
+Die Authentifizierung funktioniert, wie sich z.B. einem GET-request an https://web.arbeitsagentur.de/studiensuche/suche entnehmen lässt, über folgende cliendId:
 
-**client_id:** infosysbub-studisu
+**clientId:** infosysbub-studisu
 
-Bei folgenden GET-requests ist die *client_id* als Header-Parameter *'X-API-Key'* übergeben - die früher gängige Authentifizierung über *'OAuthAccessToken'* ist nicht mehr erforderlich. 🚀
+Bei folgenden GET-requests ist die *clientId* als Header-Parameter *'X-API-Key'* zu übergeben - die früher gängige Authentifizierung über *'OAuthAccessToken'* ist nicht mehr erforderlich. 🚀
 
 
 ## Studiensuche

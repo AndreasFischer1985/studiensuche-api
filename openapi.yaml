@@ -4,14 +4,12 @@ info:
   description: |
    Eine der größten Datenbanken für Studienangebote in Deutschland durchsuchen. 
    
-   Die Authentifizierung funktioniert per OAuth 2 Client Credentials mit JWTs. Folgende Client-Credentials können dafür verwendet werden:
+   Die Authentifizierung funktioniert über eine clientId:
    
-   **ClientID:** 5aee2cfe-1709-48a9-951d-eb48f8f73a74
+   **clientId:** infosysbub-studisu
    
-   **ClientSecret:** 3309a57a-9214-40db-9abe-28b1bb30c08c
-   
-   **Achtung**: der generierte Token muss bei folgenden GET-requests an https://rest.arbeitsagentur.de/infosysbub/studisu/pc/v1/studienangebote im header als 'OAuthAccessToken' inkludiert werden.
-  version: "1.0.0"
+  Die clientId muss bei folgenden GET-requests an https://rest.arbeitsagentur.de/infosysbub/studisu/pc/v1/studienangebote  als Header-Parameter 'X-API-Key' zu übergeben.
+  version: "1.0.1"
   contact:
     name:  "AndreasFischer1985"
     email: "andreasfischer1985@web.de"
@@ -215,7 +213,7 @@ components:
       type: apiKey
       in: header
       name: X-API-Key
-      description: "X-API-Key ist die Client-ID 5aee2cfe-1709-48a9-951d-eb48f8f73a74"
+      description: "X-API-Key ist die Client-ID infosysbub-studisu"
 
   schemas:    
     Response:
