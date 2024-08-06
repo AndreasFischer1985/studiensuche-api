@@ -247,7 +247,7 @@ Eignungstest: 1=Studiencheck, 2=OSA. Mehrere Semikolon-getrennte Angaben möglic
 
 ```bash
 studienangebot=$(curl -m 60 \
--H "OAuthAccessToken: $token" \
+-H "X-API-Key: infosysbub-studisu" \
 'https://rest.arbeitsagentur.de/infosysbub/studisu/pc/v1/studienangebote?sw=IT-Security-Manager')
 ```
 
