@@ -8,7 +8,7 @@ info:
    
    **clientId:** infosysbub-studisu
    
-  Die clientId muss bei folgenden GET-requests an https://rest.arbeitsagentur.de/infosysbub/studisu/pc/v1/studienangebote  als Header-Parameter 'X-API-Key' zu übergeben.
+   Die clientId muss bei folgenden GET-requests an https://rest.arbeitsagentur.de/infosysbub/studisu/pc/v1/studienangebote  als Header-Parameter 'X-API-Key' zu übergeben.
   version: "1.0.1"
   contact:
     name:  "AndreasFischer1985"
